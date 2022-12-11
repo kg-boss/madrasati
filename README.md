@@ -98,3 +98,9 @@ Dans ce projet, 3 pages sont créées pour l'authentification. Elles sont placé
 ##### NOTE
 Après une connexion réussie, l'utilisateur est redirigé vers la page `HomePage` avec un ***Token*** d'authentification. Ce ***Token*** sera requis pour tout autre API pour confirmer l'identité de l'utilisateur. Assurez que ce ***Token*** est transmis entre tous différents pages.
 
+## Contribution
+
+Prière de ne pas modifier le code source sur **GitHub** (`no pushing`). Ce projet sert comme un point pour entamer le développement de l'application. Ce repository n'est pas conçu pour englober la totalité de l'application.
+
+Veuillez me contacter pour toute suggestion
+
