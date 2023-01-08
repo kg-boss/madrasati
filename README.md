@@ -98,6 +98,44 @@ Dans ce projet, 3 pages sont créées pour l'authentification. Elles sont placé
 ##### NOTE
 Après une connexion réussie, l'utilisateur est redirigé vers la page `HomePage` avec un ***Token*** d'authentification. Ce ***Token*** sera requis pour tout autre API pour confirmer l'identité de l'utilisateur. Assurez que ce ***Token*** est transmis entre tous différents pages.
 
+
+### 3. Token
+
+Veuillez assurer que chaque requête d'API contient les `headers` suivants:
+```js
+headers: {
+    Accept: 'application/json', // facultatif
+    Authorization: 'Bearer YOUR_TOKEN' // requis
+}
+```
+Example en utilisant la Concatenation du variable
+```js
+Authorization: 'Bearer ' + token
+```
+Example en utilisant la fusion du variable
+```js
+Authorization: `Bearer ${token}`
+```
+
+##### Utilisation avec ***Axios***
+
+```JS
+// Requete GET
+axios.get("http://example.com", {
+  headers: { /* vos headers ici */ }
+}).then((response) => {
+  // Traitement...
+});
+
+// Requete POST
+axios.post("http://example.com", formData, {
+  headers: { /* vos headers ici */ }
+}).then((response) => {
+  // Traitement...
+});
+```
+> Pour plus d'informations veuillez visitez la [documentation officielle](https://github.com/axios/axios#instance-methods)
+
 ## Contribution
 
 Prière de ne pas modifier le code source sur **GitHub** (`no pushing`). Ce projet sert comme un point pour entamer le développement de l'application. Ce repository n'est pas conçu pour englober la totalité de l'application.
