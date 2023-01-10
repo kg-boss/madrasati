@@ -13,19 +13,17 @@ api/announcements
 ### Structure
 
 ```JSON
-[
-    {
-        "title": "TITLE_HERE",
-        "body" : "BODY_HERE",
-        "taget": "TARGET_HERE",
-        "class_id": 0,
-        "parent_id": 0,
-        "student_id": 0,
-        "attachments": [
-           /* Files Here */
-        ],
-    }
-]
+{
+    "title": "TITLE_HERE",
+    "body" : "BODY_HERE",
+    "target": "TARGET_HERE",
+    "class_id": 0,
+    "parent_id": 0,
+    "student_id": 0,
+    "attachments": [
+        /* Files Here */
+    ],
+}
 ```
 ---
 ### Attributes

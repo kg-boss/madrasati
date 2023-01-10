@@ -21,7 +21,7 @@ api/announcements
         "title": "TITLE_HERE",
         "body" : "BODY_HERE",
         "date": "DATE_ISO8601_HERE",
-        "taget": "TARGET_HERE",
+        "target": "TARGET_HERE",
         "files": [
            {
                 "filename": "FILE_NAME_HERE",
