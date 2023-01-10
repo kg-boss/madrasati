@@ -136,6 +136,71 @@ axios.post("http://example.com", formData, {
 ```
 > Pour plus d'informations veuillez visitez la [documentation officielle](https://github.com/axios/axios#instance-methods)
 
+
+### 4. Requests & Responses
+
+##### Convention de Nommage
+
+Pour le reste, on va considérer les méthodes de CRUD comme les suivants:
+|Méthode|tâche CRUD|Description|
+|-------|------|-----------|
+|`index`| Read | Récupérer la liste des resources |
+|`store`| Create | Ajouter un nouveau resource |
+|`show`| Read | Récupérer un resource spécifique |
+|`update`| Update | Mettre à jour un resource spécifique |
+|`destroy`| Delete | Supprimer un resource spécifique |
+
+##### 1. Request Methods:
+
+Généralement, tous les APIs de CRUD respectent les contraintes REST:
++ l'authorization est à travers les `headers`
++ les APIs **Create** des **CRUD** utilisent la méthode `POST`
++ les APIs **Read** des **CRUD** utilisent la méthode `GET`
++ les APIs **Update** des **CRUD** utilisent la méthode `PATCH` ou `PUT`
++ les APIs **Delete** des **CRUD** utilisent la méthode `DELETE`
+
+
+##### 2. Resources URLs:
+
+Généralement, tous les APIs CRUD possèdent un URL standardisé qui a comme format générale: 
+```js
+const index = "/api/NOM_DE_RESOURCE_EN_PLURIEL";
+const store = "/api/NOM_DE_RESOURCE_EN_PLURIEL";
+
+const show    = "/api/NOM_DE_RESOURCE_EN_PLURIEL/ID";
+const update  = "/api/NOM_DE_RESOURCE_EN_PLURIEL/ID";
+const destroy = "/api/NOM_DE_RESOURCE_EN_PLURIEL/ID";
+```
+
+##### 3. Réponses:
+
+###### Pour tous les APIs
++ En cas d'échec d'authentification vos aurez un erreur `401 (Unauthorized)`
++ En cas où la page n'existe pas (pour votre utilisateur) vos aurez un erreur `404 (Page Not Found)`
++ En cas d'un erreur dans le serveur vos aurez un erreur `500`. Dans ce cas, merci de sauvegarder le message d'erreur et me l'envoyer 
+
+###### Pour les APIs INDEX/SHOW
++ *En cas de succes*: Donnés en format JSON 
++ *En cas d'echec*: JSON vide 
+###### Pour les APIs STORE/UPDATE/DESTROY
++ *En cas de succes*: 
+```json
+{
+    "failed": false,
+    "message": ""
+}
+```
++ *En cas d'echec*:  
+```json
+{
+    "failed": true,
+    "message": "MESSAGE_DE_ERREUR_ICI"
+}
+```
+
+
+
+
 ## Contribution
 
 Prière de ne pas modifier le code source sur **GitHub** (`no pushing`). Ce projet sert comme un point pour entamer le développement de l'application. Ce repository n'est pas conçu pour englober la totalité de l'application.
